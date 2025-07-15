@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:weatherapp/models/weather_model.dart';
@@ -31,7 +29,7 @@ class SearchView extends StatelessWidget {
                 Dio(),
               ).getCurrentWeather(cityName: value);
 
-              log(weatherModel.cityName);
+              Navigator.pop(context, weatherModel);
             },
             decoration: InputDecoration(
               contentPadding: EdgeInsets.symmetric(
@@ -55,3 +53,5 @@ class SearchView extends StatelessWidget {
     );
   }
 }
+
+WeatherModel? weatherModel;
