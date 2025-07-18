@@ -21,7 +21,8 @@ class WeatherInfoBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Image.network(weatherModel.image!),
+                Image.network('https:${weatherModel.image!}'),
+,
                 Text(
                   weatherModel.temp.toString(),
                   style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
