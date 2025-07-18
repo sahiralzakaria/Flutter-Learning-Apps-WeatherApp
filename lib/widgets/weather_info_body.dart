@@ -16,27 +16,33 @@ class WeatherInfoBody extends StatelessWidget {
               weatherModel.cityName,
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
-            Text('Updated at 23:17', style: TextStyle(fontSize: 24)),
+            Text(weatherModel.cityName, style: TextStyle(fontSize: 24)),
             SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Image.asset('assets/images/cloudy.png'),
+                Image.asset(weatherModel.image!),
                 Text(
-                  '17',
+                  weatherModel.temp.toString(),
                   style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
                 ),
                 Column(
                   children: [
-                    Text('MaxTemp: 24', style: TextStyle(fontSize: 16)),
-                    Text('MinTemp: 16', style: TextStyle(fontSize: 16)),
+                    Text(
+                      'MaxTemp: ${weatherModel.maxTemp}',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    Text(
+                      'MinTemp: ${weatherModel.mintemp}',
+                      style: TextStyle(fontSize: 16),
+                    ),
                   ],
                 ),
               ],
             ),
             SizedBox(height: 50),
             Text(
-              'Ligh Rain',
+              weatherModel.weatherCondition,
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
           ],
