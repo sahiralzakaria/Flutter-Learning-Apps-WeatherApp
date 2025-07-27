@@ -16,13 +16,15 @@ class WeatherInfoBody extends StatelessWidget {
               weatherModel.cityName,
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
-            Text(weatherModel.cityName, style: TextStyle(fontSize: 24)),
+            Text(
+              "Updated at ${weatherModel.date.hour}:${weatherModel.date.minute}",
+              style: TextStyle(fontSize: 24),
+            ),
             SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Image.network('https:${weatherModel.image!}'),
-,
                 Text(
                   weatherModel.temp.toString(),
                   style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
@@ -30,11 +32,11 @@ class WeatherInfoBody extends StatelessWidget {
                 Column(
                   children: [
                     Text(
-                      'MaxTemp: ${weatherModel.maxTemp}',
+                      'MaxTemp: ${weatherModel.maxTemp.round()}',
                       style: TextStyle(fontSize: 16),
                     ),
                     Text(
-                      'MinTemp: ${weatherModel.mintemp}',
+                      'MinTemp: ${weatherModel.mintemp.round()}',
                       style: TextStyle(fontSize: 16),
                     ),
                   ],
