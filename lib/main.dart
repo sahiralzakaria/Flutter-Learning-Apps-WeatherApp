@@ -15,23 +15,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GetWeatherCubit(),
-
-      child: Builder(
-        builder: (context) => BlocBuilder<GetWeatherCubit, WeatherState>(
-          builder: (context, state) {
-            return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                primarySwatch: getThemeColor(
-                  BlocProvider.of<GetWeatherCubit>(
-                    context,
-                  ).weatherModel?.weatherCondition,
-                ),
-              ),
-              home: HomeView(),
-            );
-          },
-        ),
+      child: BlocBuilder<GetWeatherCubit, WeatherState>(
+        builder: (context, state) {
+          final themeColor = state is WeatherLoadedState
+              ? getThemeColor(state.weatherModel.weatherCondition)
+              : Colors.blue;
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primarySwatch: themeColor,
+              appBarTheme: AppBarTheme(backgroundColor: themeColor),
+            ),
+            home: const HomeView(),
+          );
+        },
       ),
     );
   }

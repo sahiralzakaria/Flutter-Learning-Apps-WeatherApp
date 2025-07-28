@@ -14,7 +14,7 @@ class GetWeatherCubit extends Cubit<WeatherState> {
         Dio(),
       ).getCurrentWeather(cityName: cityName);
 
-      emit(WeatherLoadedState(weatherModel!));
+      emit(WeatherLoadedState(weatherModel));
     } catch (e) {
       emit(WeatherFailureState(e.toString()));
     }

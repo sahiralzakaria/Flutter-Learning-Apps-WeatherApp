@@ -29,13 +29,12 @@ class _HomeViewState extends State<HomeView> {
                 ),
               );
             },
-            icon: const Icon(Icons.search, color: Colors.white, size: 32),
+            icon: const Icon(Icons.search, color: Colors.black, size: 32),
           ),
         ],
-        backgroundColor: Colors.blueAccent,
         title: const Text(
           'Weather App',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
       body: BlocBuilder<GetWeatherCubit, WeatherState>(
