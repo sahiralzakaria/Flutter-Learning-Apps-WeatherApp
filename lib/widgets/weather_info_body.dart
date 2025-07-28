@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:weatherapp/models/weather_model.dart';
 
 class WeatherInfoBody extends StatelessWidget {
-  const WeatherInfoBody({super.key, required this.weatherModel});
   final WeatherModel weatherModel;
+
+  const WeatherInfoBody({super.key, required this.weatherModel});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,39 +16,46 @@ class WeatherInfoBody extends StatelessWidget {
           children: [
             Text(
               weatherModel.cityName,
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
             Text(
               "Updated at ${weatherModel.date.hour}:${weatherModel.date.minute}",
-              style: TextStyle(fontSize: 24),
+              style: const TextStyle(fontSize: 24),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Image.network('https:${weatherModel.image!}'),
+                Image.network(
+                  'https:${weatherModel.image!}',
+                  errorBuilder: (context, error, stackTrace) =>
+                      const Icon(Icons.error),
+                ),
                 Text(
                   weatherModel.temp.toString(),
-                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Column(
                   children: [
                     Text(
                       'MaxTemp: ${weatherModel.maxTemp.round()}',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                     Text(
                       'MinTemp: ${weatherModel.mintemp.round()}',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                   ],
                 ),
               ],
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Text(
               weatherModel.weatherCondition,
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
           ],
         ),

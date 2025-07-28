@@ -24,16 +24,16 @@ class _HomeViewState extends State<HomeView> {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return SearchView();
+                    return const SearchView();
                   },
                 ),
               );
             },
-            icon: Icon(Icons.search, color: Colors.white, size: 32),
+            icon: const Icon(Icons.search, color: Colors.white, size: 32),
           ),
         ],
         backgroundColor: Colors.blueAccent,
-        title: Text(
+        title: const Text(
           'Weather App',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
@@ -41,11 +41,13 @@ class _HomeViewState extends State<HomeView> {
       body: BlocBuilder<GetWeatherCubit, WeatherState>(
         builder: (context, state) {
           if (state is WeatherInitialState) {
-            return NoWeatherBody();
+            return const NoWeatherBody();
           } else if (state is WeatherLoadedState) {
             return WeatherInfoBody(weatherModel: state.weatherModel);
+          } else if (state is WeatherFailureState) {
+            return Center(child: Text('Error: ${state.errorMessage}'));
           } else {
-            return Text('OOPS');
+            return const Center(child: Text('Unexpected error'));
           }
         },
       ),

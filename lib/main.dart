@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weatherapp/cubits/get_weather_cubit/get_weather_cubit.dart';
+import 'package:weatherapp/cubits/get_weather_cubit/get_weather_states.dart';
 import 'package:weatherapp/views/home_view.dart';
 
 void main() {
@@ -15,31 +16,31 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => GetWeatherCubit(),
 
-      child: CustomMaterialApp(),
-    );
-  }
-}
-
-class CustomMaterialApp extends StatelessWidget {
-  const CustomMaterialApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: getThemeColor(
-          BlocProvider.of<GetWeatherCubit>(
-            context,
-          ).weatherModel.weatherCondition,
+      child: Builder(
+        builder: (context) => BlocBuilder<GetWeatherCubit, WeatherState>(
+          builder: (context, state) {
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                primarySwatch: getThemeColor(
+                  BlocProvider.of<GetWeatherCubit>(
+                    context,
+                  ).weatherModel?.weatherCondition,
+                ),
+              ),
+              home: HomeView(),
+            );
+          },
         ),
       ),
-      home: HomeView(),
     );
   }
 }
 
-MaterialColor getThemeColor(String condition) {
+MaterialColor getThemeColor(String? condition) {
+  if (condition == null) {
+    return Colors.blue;
+  }
   condition = condition.toLowerCase();
 
   if (condition.contains('sunny') || condition.contains('clear')) {
