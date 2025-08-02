@@ -5,6 +5,7 @@ A beautiful and interactive weather application built with **Flutter** and **Cub
 ---
 
 
+
 ## 🚀 Features
 
 - 🔍 Search for any city to get current weather details.
