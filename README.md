@@ -1,6 +1,5 @@
 # 🌤️ Weather App - Flutter
 
-
 A beautiful and interactive weather application built with **Flutter** and **Cubit (Bloc)** state management. The app allows users to search for any city and view real-time weather conditions with a dynamic UI that adapts to the weather state.
 
 ---
