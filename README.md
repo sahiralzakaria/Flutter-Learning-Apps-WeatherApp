@@ -4,7 +4,6 @@ A beautiful and interactive weather application built with **Flutter** and **Cub
 
 ---
 
-
 ## 🚀 Features
 
 - 🔍 Search for any city to get current weather details.
@@ -60,6 +59,7 @@ lib/
    cd Flutter-Learning-Apps-WeatherApp
    ```
 
+   
 2. **Install dependencies**:
    ```bash
    flutter pub get
