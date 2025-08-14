@@ -12,6 +12,7 @@ A beautiful and interactive weather application built with **Flutter** and **Cub
 - 🧠 Efficient state management using **Cubit**.
 - 📱 Clean and responsive user interface.
 
+
 ---
 
 ## 📸 App Screenshots
