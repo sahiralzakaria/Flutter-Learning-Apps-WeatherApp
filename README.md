@@ -62,7 +62,6 @@ lib/
    cd Flutter-Learning-Apps-WeatherApp
    ```
 
-   
 2. **Install dependencies**:
    ```bash
    flutter pub get
