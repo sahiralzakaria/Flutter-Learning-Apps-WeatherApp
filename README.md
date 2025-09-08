@@ -40,6 +40,7 @@ A beautiful and interactive weather application built with **Flutter** and **Cub
 
 ## 📂 Project Structure
 
+
 ```
 lib/
 ├── cubit/            # Cubit logic and state files
