@@ -4,7 +4,6 @@ A beautiful and interactive weather application built with **Flutter** and **Cub
 
 ---
 
-
 ## 🚀 Features
 
 - 🔍 Search for any city to get current weather details.
@@ -66,7 +65,6 @@ lib/
    flutter pub get
    ```
 
-
 3. **Register and get your free API key**:
    - Go to [https://www.weatherapi.com/](https://www.weatherapi.com/)
    - Sign up and create an account
@@ -79,12 +77,10 @@ lib/
      final String apiKey = 'YOUR_API_KEY_HERE';
      ```
 
-
 5. **Run the app**:
    ```bash
    flutter run
    ```
-
 
 ---
 
@@ -95,6 +91,7 @@ lib/
 - Improve error handling for network issues  
 
 ---
+
 
 ## 👨‍💻 Author
 
