@@ -78,6 +78,7 @@ lib/
      final String apiKey = 'YOUR_API_KEY_HERE';
      ```
 
+
 5. **Run the app**:
    ```bash
    flutter run
