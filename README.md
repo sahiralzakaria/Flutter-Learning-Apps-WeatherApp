@@ -64,6 +64,7 @@ lib/
    ```bash
    flutter pub get
    ```
+   
 
 3. **Register and get your free API key**:
    - Go to [https://www.weatherapi.com/](https://www.weatherapi.com/)
