@@ -36,9 +36,7 @@ A beautiful and interactive weather application built with **Flutter** and **Cub
 
 ---
 
-
 ## 📂 Project Structure
-
 
 ```
 lib/
