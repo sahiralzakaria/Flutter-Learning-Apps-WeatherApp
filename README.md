@@ -25,9 +25,7 @@ A beautiful and interactive weather application built with **Flutter** and **Cub
   <img src="assets/temp/5.png" width="250" />
 </p>
 
-
 ---
-
 
 ## 🛠️ Technologies Used
 
